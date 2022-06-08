@@ -3,7 +3,7 @@ package net.dugged.chipscheatmod.mixin;
 import net.dugged.chipscheatmod.ChipsCheatMod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.text.LiteralText;
+import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -17,9 +17,9 @@ public abstract class MinecraftClientMixin {
 			ChipsCheatMod.hackerman = !ChipsCheatMod.hackerman;
 			final InGameHud hud = MinecraftClient.getInstance().inGameHud;
 			if (ChipsCheatMod.hackerman) {
-				hud.setOverlayMessage(new LiteralText("prepare ship for ludicrous speed"), true);
+				hud.setOverlayMessage(Text.of("prepare ship for ludicrous speed"), true);
 			} else {
-				hud.setOverlayMessage(new LiteralText("tfw no ludicrous speed"), false);
+				hud.setOverlayMessage(Text.of("tfw no ludicrous speed"), false);
 			}
 		}
 	}
